@@ -3,7 +3,7 @@
  */
 
 exports.index = function(req, res) {
-  res.render('home/index', {
+  res.render('index', {
     title: 'Zhihu restful service'
   });
 };
