@@ -16,7 +16,7 @@ module.exports = function (app, passport) {
 
   app.get('/', home.index);
 
-  app.get('/answer/:id', home.answer);
+  app.get('/answer', home.answer);
 
   app.get('/get/question/:id', question.get);
 

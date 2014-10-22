@@ -12,7 +12,7 @@
     <div class="col-xs-10">
         <ul>
             <li ng-repeat="answer in answers">
-                <a href="detail" ng-click="">{{answer.ask_title}}</a>
+                <a href="answer/{{answer._id}}" ng-click="showAnswer(answer._id)">{{answer.ask_title}}</a>
             </li>
 
         </ul>

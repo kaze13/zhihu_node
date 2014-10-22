@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 </head>
-<body ng-controller="ansCtrl">
+<body ng-controller="indexCtrl">
 
 <div class="row">
     <div class="col-xs-10">
-        <h2>{{answer.ask_title}}</h2>
-        <a href="{{ask_url}}">{{answer.ask_url}}</a>
+        <h2>{{currentAnswer.ask_title}}</h2>
+        <a href="{{ask_url}}">{{currentAnswer.ask_url}}</a>
         <div>
-            {{answer.content}}
+            {{currentAnswer.content}}
         </div>
     </div>
 
@@ -24,5 +24,5 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </html>
