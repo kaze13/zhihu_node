@@ -6,20 +6,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 </head>
-<body ng-controller="indexCtrl">
+<body ng-controller="ansCtrl">
 
 <div class="row">
     <div class="col-xs-10">
-        <ul>
-            <li ng-repeat="answer in answers">
-                <a href="detail" ng-click="">{{answer.ask_title}}</a>
-            </li>
-
-        </ul>
-        <ul class="pager">
-            <li><a href="#" id="prev-link">Previous</a></li>
-            <li><a href="#" id="next-link">Next</a></li>
-        </ul>
+        <h2>{{answer.ask_title}}</h2>
+        <a href="{{ask_url}}">{{answer.ask_url}}</a>
+        <div>
+            {{answer.content}}
+        </div>
     </div>
 
 </div>

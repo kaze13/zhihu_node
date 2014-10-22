@@ -56,9 +56,7 @@ Answer.get = function(id, callback) {
 Answer.getMuliple = function(page, count, callback) {
   answerModel.count({}, function(err, total) {
     answerModel.find().limit(count).skip((page - 1) * count)
-      .sort({
-        agree_num: 'asc'
-      }).exec(function(err, answers){
+      .exec(function(err, answers){
         callback(err, answers, total);
       })
   })
