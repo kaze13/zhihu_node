@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 </head>
-<body ng-controller="indexCtrl">
+<body ng-controller="indexCtrl" ng-init="init()">
 
 <div class="row">
     <div class="col-xs-10">
         <ul>
             <li ng-repeat="answer in answers">
-                <a href="answer/{{answer._id}}" ng-click="showAnswer(answer._id)">{{answer.ask_title}}</a>
+                <a href="#" ng-click="showAnswer(answer._id)">{{answer.ask_title}}</a>
             </li>
 
         </ul>
         <ul class="pager">
-            <li><a href="#" id="prev-link">Previous</a></li>
-            <li><a href="#" id="next-link">Next</a></li>
+            <li><a href="#" ng-click="prevPage()">Previous</a></li>
+            <li><a href="#" ng-click="nextPage()">Next</a></li>
         </ul>
     </div>
 
@@ -26,8 +26,6 @@
 
 
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="js/app.js"></script>
+<script src="js/index.js"></script>
 </html>

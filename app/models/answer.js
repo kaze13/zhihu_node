@@ -53,11 +53,20 @@ Answer.get = function(id, callback) {
   })
 };
 
-Answer.getMuliple = function(page, count, callback) {
+Answer.getMulitiple = function(page, count, callback) {
   answerModel.count({}, function(err, total) {
     answerModel.find().limit(count).skip((page - 1) * count)
       .exec(function(err, answers){
         callback(err, answers, total);
+      })
+  })
+};
+
+Answer.getMulitipleTitle = function(page, count, callback){
+  answerModel.count({}, function(err, total) {
+    answerModel.find().select('_id ask_title').limit(count).skip((page - 1) * count)
+      .exec(function(err, titles){
+        callback(err, titles, total);
       })
   })
 };

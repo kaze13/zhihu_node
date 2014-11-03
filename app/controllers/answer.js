@@ -6,8 +6,14 @@ exports.get = function(req, res) {
   });
 };
 
-exports.getMuliple = function(req, res){
-  Answer.getMuliple(req.params.page, req.params.count, function(err,answers){
+exports.getMulitiple = function(req, res){
+  Answer.getMulitiple(req.params.page, req.params.count, function(err,answers){
     res.json(answers);
+  })
+};
+
+exports.getMulitipleTitle = function(req, res){
+  Answer.getMulitipleTitle(req.params.page, req.params.count, function(err, titles){
+    res.json(titles);
   })
 };

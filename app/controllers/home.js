@@ -1,6 +1,4 @@
-/*!
- * Module dependencies.
- */
+var Answer = require('../models/answer.js');
 
 exports.index = function(req, res) {
   res.render('index', {
@@ -8,7 +6,13 @@ exports.index = function(req, res) {
   });
 };
 
-exports.answer = function(req, res){
-  res.render('answer');
-}
+exports.answer = function(req, res) {
+  Answer.get(req.params.id, function(err, answer) {
+    console.log(answer)
+    res.render('answer', {
+      answer: answer
+    });
+  })
+
+};
 

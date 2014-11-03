@@ -22,7 +22,7 @@ module.exports = function (app, passport) {
 
   app.get('/get/answer/:id', answer.get);
 
-  app.get('/get/answers/:page/:count/', answer.getMuliple);
+  app.get('/get/answers/:page/:count/', answer.getMulitipleTitle);
 
   /**
    * Error handling

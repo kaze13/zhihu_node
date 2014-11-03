@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en" ng-app="mainApp">
+<html lang="en" ng-app="answerApp">
 <head>
     <meta charset="utf-8">
     <title>index</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 </head>
-<body ng-controller="indexCtrl">
+<body ng-controller="answerCtrl" ng-init="init(<%= answer %>)">
 
 <div class="row">
     <div class="col-xs-10">
-        <h2>{{currentAnswer.ask_title}}</h2>
-        <a href="{{ask_url}}">{{currentAnswer.ask_url}}</a>
-        <div>
-            {{currentAnswer.content}}
+        <h2>{{answer.ask_title}}</h2>
+        <a href="{{answer.ask_url}}">{{answer.ask_url}}</a>
+        <div ng-bind-html="answer.content">
+
         </div>
     </div>
 
@@ -21,8 +21,7 @@
 
 
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="/js/app.js"></script>
+<script src="//code.angularjs.org/1.3.1/angular-sanitize.js"></script>
+<script src="/js/answer.js"></script>
 </html>
