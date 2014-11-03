@@ -8,11 +8,9 @@ exports.index = function(req, res) {
 
 exports.answer = function(req, res) {
   Answer.get(req.params.id, function(err, answer) {
-    console.log(answer)
     res.render('answer', {
       answer: answer
     });
   })
-
 };
 

@@ -28,10 +28,10 @@ var AnswerSchema = new Schema({
   url: { type: String, default: '' },
   ask_title: { type: String, default: '' },
   ask_url: { type: String, default: '' },
-  agree_num: { type: String, default: '' },
+  agree_num: { type: Number, default: '' },
   summary: { type: String, default: '' },
   content: { type: String, default: '' },
-  comment_num: { type: String, default: '' },
+  comment_num: { type: Number, default: '' },
   last_update_time: { type: String, default: '' }
 }, {
   collection: 'zh_answer'
@@ -56,19 +56,23 @@ Answer.get = function(id, callback) {
 Answer.getMulitiple = function(page, count, callback) {
   answerModel.count({}, function(err, total) {
     answerModel.find().limit(count).skip((page - 1) * count)
-      .exec(function(err, answers){
+      .exec(function(err, answers) {
         callback(err, answers, total);
       })
   })
 };
 
-Answer.getMulitipleTitle = function(page, count, callback){
+Answer.getMulitipleTitle = function(page, count, callback) {
   answerModel.count({}, function(err, total) {
-    answerModel.find().select('_id ask_title').limit(count).skip((page - 1) * count)
-      .exec(function(err, titles){
+    answerModel.find().select('_id ask_title agree_num summary').limit(count).skip((page - 1) * count).sort({agree_num: -1})
+      .exec(function(err, titles) {
         callback(err, titles, total);
       })
   })
+};
+
+Answer.findInTitle = function(keyword, callback){
+  answerModel.find()
 };
 
 module.exports = Answer;

@@ -25,12 +25,12 @@ var QuestionSchema = new Schema({
   _id: { type: String },
   username: { type: String, default: '' },
   url: { type: String, default: '' },
-  view_num: { type: String, default: '' },
+  view_num: { type: Number, default: '' },
   title: { type: String, default: '' },
-  comment_count: { type: String, default: '' },
+  comment_count: { type: Number, default: '' },
   recent_active_time: { type: String, default: '' },
-  answer_num: { type: String, default: '' },
-  follower_num: { type: String, default: '' }
+  answer_num: { type: Number, default: '' },
+  follower_num: { type: Number, default: '' }
 }, {
   collection: 'zh_ask'
 });

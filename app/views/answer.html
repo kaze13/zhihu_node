@@ -11,7 +11,15 @@
 <div class="row">
     <div class="col-xs-10">
         <h2>{{answer.ask_title}}</h2>
-        <a href="{{answer.ask_url}}">{{answer.ask_url}}</a>
+        <a href="{{answer.ask_url}}">View original</a>
+        <div>
+            <span>Author:</span>
+            <a href="http://www.zhihu.com/people/{{answer.username}}">{{answer.username}}</a>
+        </div>
+        <div>
+            <span>Vote:</span>
+            <span>{{answer.agree_num}}</span>
+        </div>
         <div ng-bind-html="answer.content">
 
         </div>
