@@ -6,14 +6,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 </head>
-<body ng-controller="indexCtrl" ng-init="init()">
+<body>
 
-<div class="row">
+<div class="row" ng-controller="searchCtrl">
+    <div class="col-xs-2">
+        <h1>Search</h1>
+    </div>
+    <div class="col-xs-10">
+        <input type="text" class="form-control" ng-model="keyword">
+        <button class="btn btn-default" ng-click="search(keyword)"></button>
+    </div>
+
+</div>
+
+<div class="row"  ng-controller="indexCtrl" ng-init="init()">
     <div class="col-xs-10">
         <ul>
             <li ng-repeat="answer in answers">
                 <span class="badge">{{answer.agree_num}}</span>
                 <a href="#" ng-click="showDetails = ! showDetails">{{answer.ask_title}}</a>
+
                 <div ng-show="showDetails">
                     <div>
                         {{answer.summary}}
@@ -37,5 +49,6 @@
 
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="bower_components/elasticsearch/elasticsearch.angular.js"></script>
 <script src="js/index.js"></script>
 </html>

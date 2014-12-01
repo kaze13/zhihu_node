@@ -36,6 +36,7 @@ module.exports = function (app, passport) {
 
   // Static files middleware
   app.use(express.static(config.root + '/public'));
+  app.use('/bower_components',  express.static(config.root + '/bower_components'));
 
   // Use winston on production
   var log;

@@ -72,7 +72,7 @@ Answer.getMulitipleTitle = function(page, count, callback) {
 };
 
 Answer.findInTitle = function(keyword, callback){
-  answerModel.find()
+  answerModel.find({ask_title:keyword})
 };
 
 module.exports = Answer;
